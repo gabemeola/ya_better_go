@@ -1,4 +1,13 @@
 # no binaries
+# Ignore all
 *
-!.gitignore
-!**/*.go
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+.DS_STORE
+.vs_code
+.idea
