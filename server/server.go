@@ -5,11 +5,16 @@ import (
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
-}
-
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+		var toLove string
+		if req.URL.Path[1:] != "" {
+			toLove = req.URL.Path[1:]
+		} else {
+			toLove = "Golang"
+		}
+
+		fmt.Fprintf(res, "Hi there, I love %s!", toLove)
+	})
 	http.ListenAndServe(":8080", nil)
 }
