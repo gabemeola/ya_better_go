@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	const PORT = 8080
+
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		var toLove string = "GoLang"
 		if req.URL.Path[1:] != "" {
@@ -14,5 +16,7 @@ func main() {
 
 		fmt.Fprintf(res, "Hi there, I love %s!", toLove)
 	})
-	http.ListenAndServe(":8080", nil)
+
+	fmt.Printf("App up at http://localhost:%v", PORT)
+	http.ListenAndServe(fmt.Sprintf(":%v", PORT), nil)
 }

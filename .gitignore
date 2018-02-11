@@ -9,6 +9,6 @@
 !*/
 
 .DS_STORE
-.vs_code
+.vscode
 .idea
 *.txt
