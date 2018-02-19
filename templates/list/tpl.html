@@ -1,0 +1,11 @@
+<!doctype html>
+<title>My Friends</title>
+<ul>
+  {{range .}}
+  <li>{{.}}</li>
+  {{end}}
+  <!-- Assigning Variables in a range -->
+  {{range $index, $element := .}}
+  <li>[{{$index}}] - {{$element}}</li>
+  {{end}}
+</ul>

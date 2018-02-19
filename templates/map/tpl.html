@@ -1,0 +1,11 @@
+<!doctype html>
+<title>My Friends</title>
+<ul>
+  {{range .}}
+  <li>{{.}}</li>
+  {{end}}
+  <!-- Assigning Variables from map in a range -->
+  {{range $key, $value := .}}
+  <li>{{$value}}! The enlightened one for {{$key}}.</li>
+  {{end}}
+</ul>
