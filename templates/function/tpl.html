@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Function Templates!</title>
+<!-- Uppercase strings and first three characters of motto -->
+<ul>
+  {{range .Wisdom}}
+  <li>{{uc .Name}}: "{{ft .Motto}}..."</li>
+  {{end}}
+</ul>
