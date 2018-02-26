@@ -6,8 +6,7 @@ import (
 )
 
 func main() {
-	var baseString = "BASE STRING:"
-
+	var baseString = "BASE STRING👉"
 	var abcs = "ABCDEFGUIJKLMNOPQRSTUZWXYZ"
 	var oneTwoThrees = "12345678910"
 	var gabe = "gabe"
@@ -15,8 +14,8 @@ func main() {
 	var joon = "joon"
 
 	// Concat those strings!
-	concat(
-		&baseString,
+	newString := concat(
+		baseString,
 		abcs,
 		oneTwoThrees,
 		gabe,
@@ -24,14 +23,14 @@ func main() {
 		joon,
 	)
 
-	fmt.Println("New String:", baseString)
+	fmt.Println("New String", newString)
 }
 
-func concat(concatString *string, strs ...string) {
+func concat(strs ...string) string {
 	for _, runeChar := range strs {
 		fmt.Println("Concating:", string(runeChar))
 	}
 
 	fmt.Println()
-	*concatString = strings.Join(strs, "")
+	return strings.Join(strs, "")
 }
